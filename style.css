@@ -1,0 +1,104 @@
+body {
+  background-color: rgb(15, 14, 16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  position: relative;
+  width: 90vw;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #fff;
+}
+
+.text-container {
+  width: 40vw;
+}
+
+.main-text {
+  width: 100%;
+  fill: #df4a21;
+}
+
+.logo-container {
+  width: 40vw;
+}
+
+.full-logo {
+  width: 100%;
+  position: relative;
+}
+
+.castle {
+  fill: #89290f;
+  
+  z-index: 90;
+}
+
+.letter-1 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite;
+}
+.letter-2 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite 0.1s;
+}
+.letter-3 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite 0.2s;
+}
+.letter-4 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite 0.3s;
+}
+.letter-5 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite 0.4s;
+}
+.letter-6 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite 0.5s;
+}
+.letter-7 {
+  fill: #89290f;
+  animation: colorShift 2s ease-in-out infinite 0.6s;
+}
+
+@keyframes colorShift {
+  0%, 100% { fill: #561c0c; }  /* Ursprunglig färg */
+  50% { fill: #df4a21; }  /* Mörkare nyans */
+}
+
+@keyframes flyAnimation {
+  0% { transform: translateX(0) scaleX(1); }
+  48% { transform: translateX(-19.9vw) scaleX(1); } /* Behåll riktning framåt */
+  50% { transform: translateX(-20vw) scaleX(-1); } /* Vänd draken direkt */
+  98% { transform: translateX(-0.1vw) scaleX(-1); } /* Håll riktningen tillbaka */
+  100% { transform: translateX(0) scaleX(1); } /* Håll riktningen tillbaka */
+}
+
+.dragon-container {
+  position: absolute;
+  z-index: 2;
+  /* fill: #89290f; */
+  fill: #df4a21;
+  top: 20vh;
+  right: 15vw;
+  width: 10vw;
+  animation: flyAnimation 10s ease-in-out infinite;
+}
+
+.dragon {
+  size: 100%;
+  /* fill: yellow; */
+}
+
+.invisible {
+  fill: none;
+}
