@@ -60,13 +60,11 @@ section {
 
 .full-logo {
   width: 100%;
-  position: relative;
+  /* position: relative; */
 }
 
 .castle {
   fill: #89290f;
-  
-  z-index: 90;
 }
 
 .letter-1 {
@@ -104,29 +102,45 @@ section {
 }
 
 @keyframes flyAnimation {
-  0% { transform: translateX(0) scaleX(1); }
-  48% { transform: translateX(-19.9vw) scaleX(1); } /* Behåll riktning framåt */
-  50% { transform: translateX(-20vw) scaleX(-1); } /* Vänd draken direkt */
-  98% { transform: translateX(-0.1vw) scaleX(-1); } /* Håll riktningen tillbaka */
-  100% { transform: translateX(0) scaleX(1); } /* Håll riktningen tillbaka */
+  0% { transform: translateX(0%) scaleX(1); }
+  49.9% { transform: translateX(-50%) scaleX(1); }  
+  50% { transform: translateX(5%) scaleX(-1); } /* Vänd här */
+  99.9% { transform: translateX(50%) scaleX(-1); }
+  100% { transform: translateX(0%) scaleX(1); }
 }
 
 .dragon-container {
   position: absolute;
   z-index: 2;
-  /* fill: #89290f; */
   fill: #df4a21;
-  top: 25vh;
-  right: 15vw;
+  top: 20vh;
+  left: 50%; /* Starta från mitten */
   width: 10vw;
-  animation: flyAnimation 10s ease-in-out infinite;
+  transform-origin: center;
+  animation: flyAnimation 5s ease-in-out infinite;
 }
 
+.infront {
+  visibility: hidden;
+  animation: appearInfront 5s ease-in-out infinite, flyAnimation 5s ease-in-out infinite;
+}
+
+@keyframes appearInfront {
+  0%, 49.9% {visibility: hidden; }
+  50%, 100% { visibility: visible;}
+  
+}
+
+
+
+
+
+/* 
 .dragon {
   size: 100%;
-  /* fill: yellow; */
+
 }
 
 .invisible {
   fill: none;
-}
+} */
